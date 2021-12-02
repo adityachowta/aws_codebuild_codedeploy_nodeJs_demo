@@ -1,6 +1,6 @@
 pipeline {
     agent any
-    tools {nodejs "node16" }
+    tools {nodejs "node17" }
     environment {
         NODE_ENV='production'
     }
@@ -23,10 +23,10 @@ pipeline {
             
             steps {
              echo NODE_ENV
-             withCredentials([string(credentialsId: 'e8f8ff88-49e0-433a-928d-36a518cd30d6', variable: 'secver')]) {
-                // some block
-                echo secver
-            }
+            //  withCredentials([string(credentialsId: 'e8f8ff88-49e0-433a-928d-36a518cd30d6', variable: 'secver')]) {
+            //     // some block
+            //     echo secver
+            // }
                          sh 'npm install'
             }
             
